@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>!!</title>
+</head>
+<body>
+   <h1>Welcome to profile {{user.user_name}}</h1>
+   <h3>Login system Using Flask</h3>
+
+   {% for routine in current_user.routines %}
+    <a href="{{ url_for('get_list_by_id', sub_id=routine.id) }}">Routine {{ routine.id }}</a><br>
+   {% endfor %}<br>
+   <a href="{{url_for('creating_task')}}">Create Task</a><br><br>
+   <a href="{{url_for('logout')}}">Logout</a><br>
+   <a href="{{url_for('home')}}">Home Page</a>
+ 
+</body>
+</html>

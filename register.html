@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Signup</title>
+</head>
+<body>
+<h2>Signup Page</h2>
+ 
+<form method="POST" action="{{ url_for('signup') }}">
+    {{ form.hidden_tag() }}  <!-- CSRF token -->
+    
+    <div>
+        {{ form.user_name.label }}  <!-- Render the username label -->
+        {{ form.user_name() }}       <!-- Render the username input field -->
+    </div>
+
+    <div>
+        {{ form.password.label }}  <!-- Render the password label -->
+        {{ form.password() }}       <!-- Render the password input field -->
+    </div>
+
+    <div>
+        {{ form.submit() }}  <!-- Render the submit button -->
+    </div>
+</form>
+
+<a href="{{url_for('login')}}">You already have an account? Log In</a>
+<a href="{{url_for('home')}}">Home</a>
+</body>
+</html>
